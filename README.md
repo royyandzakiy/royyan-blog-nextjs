@@ -2,19 +2,23 @@
 
 Disini aku telah belajar bagaimana cara membuat sebuah blog sederhana dari [tutorial resmi Nextjs](https://nextjs.org/learn/basics/create-nextjs-app).
 
+[Royyan Blog NextJS](https://royyan-blog-nextjs.vercel.app/) disini
+
 ---
 
-In a nutshell, yang bisa aku pelajari adalah:
+In a nutshell, yang telah aku pelajari adalah:
 - basic
     - create reactjs app `npx create-next-app ...`
     - simple blogpost with `pages/<page name>.js`
     - navigating `<Link>`
     - universal Layout `layout.js`
+    - global CSS called within `pages/_app.js`
 - handlers
-    - prerendering `index.js` page on build time: blog pages generator handler `[id].js` which implements `getStaticProps` to get posts data from `[post name].md` and generate posts by parsing the markdown metadata with `gray-matter`
+    - prerendering `index.js` page on build time: blog pages generator handler `[id].js` which implements `getStaticProps`, calling `getSortedPostsData` from the post handler which is `posts.js` to get posts metadata from `[post name].md` and generate list of post id's by parsing the `[post name]` markdown metadata (`id`, `date`, `title`) with `gray-matter`
     - understand different use cases of static generation vs. server side rendering vs. client side rendering
     - fetch client side data: `SWR`
-    - dynamic route with `[id].js` which implements `getStaticPaths` to get `[post names].md` then use `[post names]` as url
+    - dynamic route with `[id].js` which implements `getStaticPaths` to get `[post names].md` then use `[post names]` as dynamic blog posts url
+    - generating posts using `getPostData` in post handler `posts.js`, by parsing the html markdown using `remark` (render markdown). calling `getPostData` in `[id].js`
 - api route to create serverside API
 
 ---
