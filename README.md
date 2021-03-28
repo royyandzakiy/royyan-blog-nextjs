@@ -15,11 +15,11 @@ In a nutshell, yang telah aku pelajari adalah:
     - universal Layout `layout.js`
     - global CSS called within `pages/_app.js`, saved in `styles/global.css`
 - handlers
-    - prerendering `index.js` page on build time: blog pages dynamic generator `[id].js` which implements `getStaticProps`, calling `getSortedPostsData` from the internal post handler which is `lib/posts.js` to get posts metadata from `[post name].md` and generate list of post id's by parsing the `[post name]` markdown metadata (`id`, `date`, `title`) using `gray-matter`
+    - prerendering `index.js` page on build time: `index.js` implements `getStaticProps`, calling `getSortedPostsData` from the internal post handler which is `lib/posts.js` to get posts metadata from `[post name].md` and generate list of post id's by parsing each posts markdown metadata (`id`, `date`, `title`) using `gray-matter`
     - understand different use cases of static generation vs. server side rendering vs. client side rendering
     - fetch client side data: `SWR`
     - dynamic route with `[id].js` which implements `getStaticPaths` using `getAllPostIds` from post handler `lib/posts.js` to get `[post names].md` then use `[post names]` as dynamic blog posts url
-    - generating posts with `[id].js` using `getPostData` in post handler `lib/posts.js`, by parsing the html markdown using `remark` (render markdown)
+    - dynamically generating posts with `[id].js` which implements `getStaticProps` using `getPostData` in post handler `lib/posts.js`, by parsing the html markdown using `remark` (render markdown)
 - api route to create serverside API
 
 ---
