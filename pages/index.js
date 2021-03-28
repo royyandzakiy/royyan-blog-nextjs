@@ -5,22 +5,24 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 
+// get data on build time
 export async function getStaticProps() {
-    const allPostsData = getSortedPostsData()
-    return {
-      props: {
-        allPostsData
-      }
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
     }
   }
+}
 
-// get data on runtim
+// get data on run time
 // export async function getServerSideProps(context) {
-// 	return {
-// 			props: {
-// 				// props for your component
-// 			}
-// 	}
+// 	const allPostsData = getSortedPostsData()
+//   return {
+//     props: {
+//       allPostsData
+//     }
+//   }
 // }
   
 
