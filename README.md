@@ -2,7 +2,24 @@
 
 Disini aku telah belajar bagaimana cara membuat sebuah blog sederhana dari [tutorial resmi Nextjs](https://nextjs.org/learn/basics/create-nextjs-app).
 
-Disini aku sudah mengimplementasikan beberapa hal berikut:
+---
+
+In a nutshell, yang bisa aku pelajari adalah:
+- basic
+    - create reactjs app `npx create-next-app ...`
+    - simple blogpost with `pages/<page name>.js`
+    - navigating `<Link>`
+    - universal Layout `layout.js`
+- handlers
+    - prerendering build time: blog pages generator handler `[id].js` which implements `getStaticProps` to get data and generate posts
+    - fetch on request time: `getServerSideProps`
+    - fetch client side data: SWR
+    - dynamic route with `[id].js` which implements `getStaticPaths` to get [post names].md then use [post names] as url
+- api route to create serverside API
+
+---
+
+Secara detail, aku sudah mengimplementasikan beberapa hal berikut:
 
 1. **Create nextjs app**: Disini aku belajar cara bikin nextjs app dengan command `npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn-starter/tree/master/learn-starter"`
 
@@ -22,16 +39,3 @@ Disini aku sudah mengimplementasikan beberapa hal berikut:
     - `getStaticProps`: disini diambil data posts dari id tertentu, diambil konten dari post tersebut yang merupakan .md. digunakan `remark` alias render markdwon, dan dikasih `await` biar ngelakuin renderingnya secara `asyncronous`. akhirnya di `[id].js::Post` di ambillah konten yang didapetkan tadi, dan di `dangerouslySetInnerHTML` ke bagian `<article>...</article>`
 
 6. **API Routes**: serverless functions/lambdas. sebuah opsi API yang bisa ditembak, dimana uniknya ini gaakan masuk di clientside bundle. jadi aman aja kalo mau dipake yang aneh-aneh, misal akses database. contoh use case adalah suruh client isi sebuah form, dan form ini nembak ke API Route ini, nanti dari API Route ini akan dilanjutkan untuk save ke DB.
-
-in a nutshell, yang bisa aku pelajari adalah:
-- basic
-    - create reactjs app `npx create-next-app ...`
-    - simple blogpost with `pages/<page name>.js`
-    - navigating `<Link>`
-    - universal Layout `layout.js`
-- handlers
-    - prerendering build time: blog pages generator handler `[id].js` which implements `getStaticProps` to get data and generate posts
-    - fetch on request time: `getServerSideProps`
-    - fetch client side data: SWR
-    - dynamic route with `[id].js` which implements `getStaticPaths` to get [post names].md then use [post names] as url
-- api route to create serverside API
