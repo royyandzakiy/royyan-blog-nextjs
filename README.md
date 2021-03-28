@@ -12,9 +12,9 @@ In a nutshell, yang bisa aku pelajari adalah:
     - universal Layout `layout.js`
 - handlers
     - prerendering `index.js` page on build time: blog pages generator handler `[id].js` which implements `getStaticProps` to get posts data from `[post name].md` and generate posts by parsing the markdown metadata with `gray-matter`
-    - belajar bedanya static generation vs. server side rendering vs. client side rendering
-    - fetch client side data: SWR
-    - dynamic route with `[id].js` which implements `getStaticPaths` to get [post names].md then use [post names] as url
+    - understand different use cases of static generation vs. server side rendering vs. client side rendering
+    - fetch client side data: `SWR`
+    - dynamic route with `[id].js` which implements `getStaticPaths` to get `[post names].md` then use `[post names]` as url
 - api route to create serverside API
 
 ---
