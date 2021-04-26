@@ -22,6 +22,9 @@ In a nutshell, yang telah aku pelajari adalah:
     - dynamically generating posts with `[id].js` which implements `getStaticProps` using `getPostData` in post handler `lib/posts.js`, by parsing the html markdown using `remark` (render markdown)
 - api route to create serverside API
 
+![](docs/ss.png)
+![](docs/ss-2.png)
+
 ---
 
 Secara detail, aku sudah mengimplementasikan beberapa hal berikut:
